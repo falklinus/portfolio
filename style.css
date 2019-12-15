@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.button {
+  padding: 5px 10px;
+  background: none;
+  border: solid 1px #383d42;
+  border-radius: 3px;
+  font: normal 14px "Poppins";
+  outline: none;
+  cursor: pointer;
+}
+
+.button.primary {
+  background: #383d42;
+  color: rgb(241, 241, 241);
+  transition: all 0.2s ease;
+}
+.button.primary:hover {
+  box-shadow: 1px 1px 7px rgb(192, 192, 192), 1px 1px 7px rgb(156, 156, 156);
+  text-shadow: 1px 1px 4px rgb(192, 192, 192), 1px 1px 4px rgb(156, 156, 156);
+}
+.button.primary a {
+  text-decoration: none;
+  color: rgb(241, 241, 241);
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  width: 100vw;
+  padding: 0 10vw;
+  position: fixed;
+  background: #383d42;
+}
+
+.logo {
+  font: normal 22px "Bebas Neue";
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  font: normal 12px "Poppins";
+  letter-spacing: 2px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(241, 241, 241);
+  text-transform: uppercase;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background: rgb(241, 241, 241);
+  transition: all 0.3s ease;
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.intro {
+  height: 100vh;
+}
+.intro .content {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 10vh;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+}
+.intro .content .description {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.intro .content .description .description-text {
+  font-family: "Poppins";
+}
+.intro .content .description .description-text h1 {
+  font-size: 50px;
+}
+.intro .content .description .description-text p {
+  font-size: 18px;
+}
+.intro .content .description button {
+  margin: 20px 0 0 0;
+  width: 150px;
+  text-transform: uppercase;
+}
+
+.about {
+  height: 100vh;
+  background: lightblue;
+}
+.about .content {
+  padding-top: 10vh;
+}
+
+.experiences {
+  height: 100vh;
+  background: lightgoldenrodyellow;
+}
+.experiences .content {
+  padding-top: 10vh;
+}
+
+.school {
+  height: 100vh;
+  background: lightseagreen;
+}
+.school .content {
+  padding-top: 10vh;
+}
+
+.contact {
+  height: 100vh;
+  background: lightcoral;
+}
+.contact .content {
+  padding-top: 10vh;
+}
+
+@media screen and (max-width: 1150px) {
+  .nav-links {
+    width: 60%;
+  }
+  .intro .content img {
+    width: 50%;
+  }
+  .intro .content .description .description-text h1 {
+    font-size: 40px;
+  }
+  .intro .content .description .description-text p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 90vh;
+    top: 10vh;
+    background: #383d42;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  .nav-links a {
+    transition: text-shadow 0.2s ease;
+  }
+  .nav-links a:hover {
+    text-shadow: 1px 1px 7px rgb(192, 192, 192), 1px 1px 7px rgb(156, 156, 156);
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+
+  .intro .content {
+    flex-direction: column;
+  }
+  .intro .content img {
+    width: 80%;
+    margin-left: 40px;
+  }
+  .intro .content .description {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.nav-active {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
